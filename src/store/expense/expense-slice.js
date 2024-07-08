@@ -9,9 +9,9 @@ export const expenseSlice = createSlice({
     ],
   },
   reducers: {
-    addExpenseAction: (currentSlice) => {
-      console.log("addExpenseAction");
-      currentSlice.expenseList.push({ name: "Cherry", price: 100 });
+    addExpenseAction: (currentSlice, action) => {
+      console.log("action", action);
+      currentSlice.expenseList.push(action.payload);
     },
   },
 });
